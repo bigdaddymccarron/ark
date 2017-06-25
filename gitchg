@@ -1,0 +1,4 @@
+#/bin/bash
+
+git remote add origin https://github.com/bigdaddymccarron/ark.git
+git push -u origin master

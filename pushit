@@ -1,0 +1,20 @@
+#/bin/bash
+
+DOCKER=ark
+USER=bigdaddymccarron
+
+if [ "$1" == "--help" ]; then
+  echo Usage: pushit [version]
+else
+  VER=$1
+  docker login --username $USER
+  if [ "$VER" == "" ]; then
+    IMAGE=$USER/$DOCKER
+  else
+    IMAGE=$USER/$DOCKER:$VER
+  fi
+  docker tag $DOCKER $IMAGE
+  docker images
+  docker push $IMAGE
+  docker logout
+fi

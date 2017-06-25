@@ -1,0 +1,5 @@
+#/bin/bash
+
+DOCKER=ark
+
+docker build --tag $DOCKER .
