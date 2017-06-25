@@ -1,6 +1,6 @@
 ark:
   container_name: ark
-  image: turzam/ark
+  image: bigdaddymccarron/ark
   environment:
     - SESSIONNAME=Ark Docker
     - SERVERMAP=TheIsland
@@ -12,7 +12,7 @@ ark:
     - GID=1000
     - UID=1000
   volumes:
-    - /my/path/to/ark:/ark
+    - /mnt/user/Dockers/Ark:/ark
   ports:
     - 7778:7778/udp
     - 7778:7778

@@ -5,6 +5,8 @@ FROM ubuntu:17.04
 MAINTAINER bigdaddymccarron
 
 # Var for first config
+# Time Zone
+ENV TS=America/New_York
 # Server Name
 ENV SESSIONNAME "Ark Docker"
 # Map name
@@ -89,17 +91,11 @@ COPY instance.cfg /etc/arkmanager/instances/main.cfg
 RUN chown steam -R /ark && chmod 755 -R /ark
 RUN chown steam -R /etc/arkmanager && chmod 755 -R /etc/arkmanager
 
-#USER steam 
-
 # download steamcmd
 RUN mkdir /home/steam/steamcmd &&\ 
 	cd /home/steam/steamcmd &&\ 
 	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
-
-# First run is on anonymous to download the app
-# We can't download from docker hub anymore -_-
-#RUN /home/steam/steamcmd/steamcmd.sh +login anonymous +quit
 
 EXPOSE ${STEAMPORT} 32330 ${SERVERPORT}
 # Add UDP
