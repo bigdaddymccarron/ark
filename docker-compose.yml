@@ -9,8 +9,8 @@ ark:
     - BACKUPONSTART=1
     - UPDATEONSTART=1
     - TZ=Europe/Paris
-    - GID=1000
-    - UID=1000
+    - GID=281
+    - UID=1007
   volumes:
     - /mnt/user/Dockers/Ark:/ark
   ports:

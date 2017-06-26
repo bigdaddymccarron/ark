@@ -1,4 +1,11 @@
 #/bin/bash
 
-git remote add origin https://github.com/bigdaddymccarron/ark.git
-git push -u origin master
+if [ "$1" == "" ]; then
+  echo usage: gitchg [comment]
+else
+  COMMENT=$*
+  git add .
+  git commit -m "$COMMENT"
+  git remote add origin https://github.com/bigdaddymccarron/ark.git
+  git push -u origin master
+fi
