@@ -50,6 +50,11 @@ RUN sed -i.bkp -e \
 	's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers \
 	/etc/sudoers
 
+RUN echo '*	soft	nofile	100000' >> /etc/security/limits.conf
+RUN echo '*	hard	nofile	100000' >> /etc/security/limits.conf
+RUN echo 'root	soft	nofile	100000' >> /etc/security/limits.conf
+RUN echo 'root	hard	nofile	100000' >> /etc/security/limits.conf
+
 # Run commands as the steam user
 RUN adduser \ 
 	--disabled-login \ 

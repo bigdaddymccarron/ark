@@ -17,7 +17,5 @@ chown -R steam:steam /ark /home/steam
 # avoid error message when su -p (we need to read the /root/.bash_rc )
 chmod -R 777 /root/
 
-ulimit -n 100000
-
 # Launch run.sh with user steam (-p allow to keep env variables)
 su -p - steam -c /home/steam/run.sh
