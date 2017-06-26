@@ -40,7 +40,7 @@ ENV GID 281
 # Install dependencies 
 COPY sources.list /etc/apt/sources.list
 RUN apt-get update &&\ 
-    apt-get install -y curl lib32gcc1 lsof git vim tzdata
+    apt-get install -y curl lib32gcc1 lsof git vim tzdata sudo cron
 
 # Enable passwordless sudo for users under the "sudo" group
 COPY sudoers /etc/sudoers
