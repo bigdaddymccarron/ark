@@ -2,6 +2,9 @@
 echo "###########################################################################"
 echo "# Ark Server - " `date`
 echo "# UID $UID - GID $GID"
+echo "# "
+echo "# Players: $NBPLAYERS"
+echo "# Mods...: $SERVERMODS"
 echo "###########################################################################"
 [ -p /tmp/FIFO ] && rm /tmp/FIFO
 mkfifo /tmp/FIFO
