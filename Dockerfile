@@ -107,7 +107,7 @@ EXPOSE ${STEAMPORT} 32330 ${SERVERPORT}
 EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
 
 VOLUME  /ark 
-VOLUME  /Steam 
+VOLUME  /root/Steam 
 
 # Change the working directory to /ark
 WORKDIR /ark
