@@ -17,6 +17,8 @@ chown -R steam:steam /ark /home/steam
 # avoid error message when su -p (we need to read the /root/.bash_rc )
 chmod -R 777 /root/
 
+ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+
 ulimit -n 100000
 
 # Launch run.sh with user steam (-p allow to keep env variables)

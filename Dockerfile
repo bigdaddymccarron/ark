@@ -6,7 +6,7 @@ MAINTAINER bigdaddymccarron
 
 # Var for first config
 # Time Zone
-ENV TS=America/New_York
+ENV TZ=EST
 # Server Name
 ENV SESSIONNAME "Ark Docker"
 # Map name
