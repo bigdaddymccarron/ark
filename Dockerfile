@@ -72,6 +72,7 @@ RUN touch /root/.bash_profile
 RUN chmod 777 /home/steam/run.sh
 RUN chmod 777 /home/steam/user.sh
 RUN mkdir  /ark
+RUN mkdir  /root/Steam
 
 WORKDIR /home/steam/
 # We use the git method, because api github has a limit ;)
@@ -106,6 +107,7 @@ EXPOSE ${STEAMPORT} 32330 ${SERVERPORT}
 EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
 
 VOLUME  /ark 
+VOLUME  /Steam 
 
 # Change the working directory to /ark
 WORKDIR /ark
