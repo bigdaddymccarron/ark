@@ -26,7 +26,9 @@ ENV BACKUPONSTART 1
 # Server PORT (you can't remap with docker, it doesn't work)
 ENV SERVERPORT 27015
 # Steam port (you can't remap with docker, it doesn't work)
-ENV STEAMPORT 7778
+ENV STEAMPORT 7777
+# Remote Console port (you can't remap with docker, it doesn't work)
+ENV RCONPORT 32330
 # if the server should backup after stopping
 ENV BACKUPONSTOP 1
 # If the server warn the players before stopping
@@ -102,9 +104,9 @@ RUN mkdir /home/steam/steamcmd &&\
 	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
 
-EXPOSE -p ${STEAMPORT}/tcp ${SERVERPORT}/tcp
-EXPOSE -p ${STEAMPORT}/udp ${SERVERPORT}/udp
-EXPOSE -p 32330/tcp
+EXPOSE ${STEAMPORT}/tcp ${SERVERPORT}/tcp
+EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
+EXPOSE ${RCONPORT}/tcp
 
 VOLUME  /ark 
 VOLUME  /root/Steam 

@@ -8,14 +8,15 @@ ark:
     - ADMINPASSWORD=adminpassword
     - BACKUPONSTART=1
     - UPDATEONSTART=1
-    - TZ=Europe/Paris
+    - TZ=EST
     - GID=281
     - UID=1007
   volumes:
-    - /mnt/user/Dockers/Ark:/ark
+    - /mnt/user/Dockers/Ark/server:/ark
+    - /mnt/cache/Dockers/Ark/Steam:/root/Steam 
   ports:
-    - 7778:7778/udp
-    - 7778:7778
+    - 7777:7777/udp
+    - 7777:7777
     - 27015:27015/udp
     - 27015:27015
     - 32330:32330
