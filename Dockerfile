@@ -104,7 +104,7 @@ RUN mkdir /home/steam/steamcmd &&\
 	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
 
-EXPOSE ${STEAMPORT}/tcp ${SERVERPORT}/tcp
+EXPOSE ${STEAMPORT} ${SERVERPORT}
 EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
 EXPOSE ${RCONPORT}/tcp
 
