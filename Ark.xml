@@ -26,7 +26,7 @@ Docker stop is a clean stop</Overview>
   <TemplateURL/>
   <Icon>http://i.imgur.com/mYdLixs.png</Icon>
   <ExtraParams/>
-  <DateInstalled>1498419353</DateInstalled>
+  <DateInstalled>1498956269</DateInstalled>
   <Description>ARK: Survival Evolved - Docker&#xD;
 &#xD;
 Docker build for managing an ARK: Survival Evolved server.&#xD;
@@ -73,8 +73,13 @@ Docker stop is a clean stop</Description>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Dockers/Ark</HostDir>
+      <HostDir>/mnt/user/Dockers/Ark/server</HostDir>
       <ContainerDir>/ark</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Dockers/Ark/Steam</HostDir>
+      <ContainerDir>/root/Steam</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -130,20 +135,21 @@ Docker stop is a clean stop</Description>
       <Mode/>
     </Variable>
   </Environment>
-  <Config Name="Ark Path" Target="/ark" Default="/mnt/user/Dockers/Ark" Mode="rw" Description="Ark volume local server path." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Dockers/Ark</Config>
+  <Config Name="Ark Path" Target="/ark" Default="/mnt/user/Dockers/Ark" Mode="rw" Description="Ark volume local server path." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Dockers/Ark/server</Config>
+  <Config Name="Steam Path" Target="/root/Steam" Default="" Mode="rw" Description="Steam volume local server path." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Dockers/Ark/Steam</Config>
+  <Config Name="Session Name" Target="SESSIONNAME" Default="Ark Docker" Mode="" Description="Name of your ark server (default : Ark Docker)" Type="Variable" Display="always" Required="true" Mask="false">HordesFinest</Config>
+  <Config Name="Ark Server Map" Target="SERVERMAP" Default="TheIsland" Mode="" Description="Map of your ark server (default : TheIsland)" Type="Variable" Display="always" Required="true" Mask="false">TheIsland</Config>
+  <Config Name="Ark Game Mods" Target="SERVERMODS" Default="" Mode="" Description="Ark Server Game comma delimited mod list (default : null)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Number of Players" Target="NBPLAYERS" Default="70" Mode="" Description="Number of players allowed to connect to the server (default : 70)" Type="Variable" Display="always" Required="false" Mask="false">32</Config>
   <Config Name="Steam Port (TCP)" Target="7777" Default="7777" Mode="tcp" Description="Steam Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
   <Config Name="Steam Port (UDP)" Target="7777" Default="7777" Mode="udp" Description="Steam Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
   <Config Name="Ark Server Port (TCP)" Target="27015" Default="27015" Mode="tcp" Description="Ark Server Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
   <Config Name="Ark Server Port (UDP)" Target="27015" Default="27015" Mode="tcp" Description="Ark Server Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
   <Config Name="Remote Console Port (TCP)" Target="32330" Default="32331" Mode="tcp" Description="Remote Console Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">32330</Config>
-  <Config Name="Session Name" Target="SESSIONNAME" Default="Ark Docker" Mode="" Description="Name of your ark server (default : Ark Docker)" Type="Variable" Display="always" Required="true" Mask="false">HordesFinest</Config>
-  <Config Name="Ark Server Map" Target="SERVERMAP" Default="TheIsland" Mode="" Description="Map of your ark server (default : TheIsland)" Type="Variable" Display="always" Required="true" Mask="false">TheIsland</Config>
   <Config Name="Server Password" Target="SERVERPASSWORD" Default="" Mode="" Description="Password of your ark server (default : none)" Type="Variable" Display="always" Required="true" Mask="true">wow2014</Config>
   <Config Name="Ark Admin Password" Target="ADMINPASSWORD" Default="adminpassword" Mode="" Description="Admin password of your ark server (default : adminpassword)" Type="Variable" Display="always" Required="true" Mask="true">TrumpRules2017</Config>
   <Config Name="Backup On Start" Target="BACKUPONSTART" Default="1" Mode="" Description="Backup the server when the container is started. 0: no backup (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
   <Config Name="Update on Start" Target="UPDATEONSTART" Default="1" Mode="" Description="Update the server when the container is started. 0: no update (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
   <Config Name="Backup on Stop" Target="BACKUPONSTOP" Default="0" Mode="" Description="Backup the server when the container is stopped. 0: no backup (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
   <Config Name="Warn on Stop" Target="WARNONSTOP" Default="0" Mode="" Description="Warn the players before the container is stopped. 0: no warning (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
-  <Config Name="Number of Players" Target="NBPLAYERS" Default="70" Mode="" Description="Number of players allowed to connect to the server (default : 70)" Type="Variable" Display="always" Required="false" Mask="false">32</Config>
-  <Config Name="Ark Game Mods" Target="SERVERMODS" Default="" Mode="" Description="Ark Server Game comma delimited mod list (default : null)" Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>
