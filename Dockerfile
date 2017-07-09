@@ -102,9 +102,9 @@ RUN mkdir /home/steam/steamcmd &&\
 	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
 
-EXPOSE ${STEAMPORT} 32330 ${SERVERPORT}
-# Add UDP
-EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
+EXPOSE -p ${STEAMPORT}/tcp ${SERVERPORT}/tcp
+EXPOSE -p ${STEAMPORT}/udp ${SERVERPORT}/udp
+EXPOSE -p 32330/tcp
 
 VOLUME  /ark 
 VOLUME  /root/Steam 
