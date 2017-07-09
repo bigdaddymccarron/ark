@@ -24,9 +24,9 @@ ENV UPDATEONSTART 1
 # if the server is backup when start with docker start
 ENV BACKUPONSTART 1
 # Server PORT (you can't remap with docker, it doesn't work)
-ENV SERVERPORT 27015
+ENV SERVERPORT 7778
 # Steam port (you can't remap with docker, it doesn't work)
-ENV STEAMPORT 7777
+ENV QUERYPORT 27015
 # Remote Console port (you can't remap with docker, it doesn't work)
 ENV RCONPORT 32330
 # if the server should backup after stopping
@@ -104,8 +104,8 @@ RUN mkdir /home/steam/steamcmd &&\
 	curl http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -vxz 
 
 
-EXPOSE ${STEAMPORT} ${SERVERPORT}
-EXPOSE ${STEAMPORT}/udp ${SERVERPORT}/udp
+EXPOSE ${QUERYPORT} ${SERVERPORT}
+EXPOSE ${QUERYPORT}/udp ${SERVERPORT}/udp
 EXPOSE ${RCONPORT}/tcp
 
 VOLUME  /ark 
