@@ -5,6 +5,8 @@ FROM ubuntu:20.04
 MAINTAINER bigdaddymccarron
 
 # Var for first config
+# Set Terminal
+ENV TERM=xterm
 # Time Zone
 ENV TZ=EST
 # Server Name
