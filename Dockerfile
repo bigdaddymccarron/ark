@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 
 # Base setuo was taken from
 #https://github.com/TuRz4m/Ark-docker
@@ -78,7 +78,8 @@ RUN mkdir  /root/Steam
 
 WORKDIR /home/steam/
 # We use the git method, because api github has a limit ;)
-RUN  git clone https://github.com/FezVrasta/ark-server-tools.git ark-server-tools
+#RUN  git clone https://github.com/FezVrasta/ark-server-tools.git ark-server-tools
+RUN  git clone https://github.com/arkmanager/ark-server-tools.git ark-server-tools
 
 WORKDIR /home/steam/ark-server-tools/
 # Install 
