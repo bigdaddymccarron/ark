@@ -7,6 +7,13 @@ This image uses [Ark Server Tools](https://github.com/arkmanager/ark-server-tool
 *If you use an old volume, get the new arkmanager.cfg in the template directory.*  
 __Don't forget to use `docker pull bigdaddymccarron/ark` to get the latest version of the image__
 
+## v2.3
+- Fixed run.sh
+- Fixed user.sh
+
+## v2.2
+- Updated to use the new arkmanager tools
+- Updated base OS to ubunto 20.04 LTS
 
 ## Features
  - Easy install (no steamcmd / lib32... to install)

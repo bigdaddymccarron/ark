@@ -22,4 +22,4 @@ ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
 ulimit -n 100000
 
 # Launch run.sh with user steam (-p allow to keep env variables)
-su -p - steam -c /home/steam/run.sh
+su steam -c /home/steam/run.sh
