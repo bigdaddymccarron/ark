@@ -44,7 +44,7 @@ ENV GID 281
 # Install dependencies 
 COPY sources.list /etc/apt/sources.list
 RUN apt-get update &&\ 
-    apt-get install -y curl lib32gcc1 lsof git vim sudo cron
+    apt-get install -y curl lib32gcc1 lsof git vim sudo cron apt-utils
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y tzdata
 
 # Enable passwordless sudo for users under the "sudo" group
@@ -81,7 +81,6 @@ RUN mkdir  /root/Steam
 
 WORKDIR /home/steam/
 # We use the git method, because api github has a limit ;)
-#RUN  git clone https://github.com/FezVrasta/ark-server-tools.git ark-server-tools
 RUN  git clone https://github.com/arkmanager/ark-server-tools.git ark-server-tools
 
 WORKDIR /home/steam/ark-server-tools/
