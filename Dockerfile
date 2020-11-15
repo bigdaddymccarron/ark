@@ -72,10 +72,12 @@ COPY run.sh /home/steam/run.sh
 COPY user.sh /home/steam/user.sh
 COPY crontab /home/steam/crontab
 COPY arkmanager-user.cfg /home/steam/arkmanager.cfg
+COPY arkshortcut.sh /usr/local/bin
 
 RUN touch /root/.bash_profile
-RUN chmod 777 /home/steam/run.sh
-RUN chmod 777 /home/steam/user.sh
+RUN chmod 755 /home/steam/run.sh
+RUN chmod 755 /home/steam/user.sh
+RUN chmod 755 /usr/local/bin/arkshortcut.sh
 RUN mkdir  /ark
 RUN mkdir  /root/Steam
 
@@ -91,6 +93,16 @@ RUN ./install.sh steam
 
 # Allow crontab to call arkmanager
 RUN ln -s /usr/local/bin/arkmanager /usr/bin/arkmanager
+
+# Create arkmanager shortcuts
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/status
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/start
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/stop
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/restart
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/update
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/updatemods
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/upgradetools
+RUN ln -s /usr/local/bin/arkshortcut.sh /usr/local/bin/saveworld
 
 # Define default config file in /etc/arkmanager
 COPY arkmanager-system.cfg /etc/arkmanager/arkmanager.cfg
