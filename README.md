@@ -11,7 +11,7 @@ __Don't forget to use `docker pull bigdaddymccarron/ark` to get the latest versi
 - Fixed updatemods in arkshortcut.sh
 
 ## v2.4
-- Added arkshortcut.sh and it corresponding short cuts
+- Added arkshortcut.sh and its corresponding shortcuts
 
 ## v2.3
 - Fixed run.sh
