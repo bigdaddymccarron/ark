@@ -10,7 +10,7 @@ case "$cmd" in
 		arkmanager update
 		;;
 	"updatemods")
-		arkmanager update --updatemods
+		arkmanager update --update-mods
 		;;
 	"start")
 		arkmanager start
