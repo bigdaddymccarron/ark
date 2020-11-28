@@ -7,8 +7,11 @@ This image uses [Ark Server Tools](https://github.com/arkmanager/ark-server-tool
 *If you use an old volume, get the new arkmanager.cfg in the template directory.*  
 __Don't forget to use `docker pull bigdaddymccarron/ark` to get the latest version of the image__
 
+## v2.5
+- Fixed updatemods in arkshortcut.sh
+
 ## v2.4
-- Added arkshortcut.sh and it corresponding shorts
+- Added arkshortcut.sh and it corresponding short cuts
 
 ## v2.3
 - Fixed run.sh
