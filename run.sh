@@ -48,6 +48,9 @@ cp /home/steam/crontab /ark/template/crontab
 [ ! -L /ark/GameUserSettings.ini ] && ln -s server/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini GameUserSettings.ini
 [ ! -f /ark/crontab ] && cp /ark/template/crontab /ark/crontab
 
+# See if arkmanager tools need to be upgraded
+yes |arkmanager upgrade-tools
+
 if [ ! -d /ark/server  ] || [ ! -f /ark/server/version.txt ];then 
 	echo "No game files found. Installing..."
 	mkdir -p /ark/server/ShooterGame/Saved/SavedArks

@@ -7,6 +7,10 @@ This image uses [Ark Server Tools](https://github.com/arkmanager/ark-server-tool
 *If you use an old volume, get the new arkmanager.cfg in the template directory.*  
 __Don't forget to use `docker pull bigdaddymccarron/ark` to get the latest version of the image__
 
+## v2.7
+- Modifed run.sh to check for new arkmanager tools on startup
+- Changed /etc/arkmanager/arkmanager.cfg to set arkstChannel to "master" instead of using the BRANCH environment variable
+
 ## v2.6
 - Added arkmanager Branch settings to docker config and added BRANCH environment variable
 
