@@ -2,6 +2,7 @@ ark:
   container_name: ark
   image: bigdaddymccarron/ark
   environment:
+    - BRANCH=master
     - SESSIONNAME=Ark Docker
     - SERVERMAP=TheIsland
     - SERVERPASSWORD="" 

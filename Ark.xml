@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Ark</Name>
+  <Name>Ark-Ragnarok</Name>
   <Repository>bigdaddymccarron/ark</Repository>
   <Registry>https://cloud.docker.com/swarm/bigdaddymccarron/repository/docker/bigdaddymccarron/ark-docker</Registry>
   <Network>host</Network>
   <MyIP/>
+  <Shell>bash</Shell>
   <Privileged>true</Privileged>
   <Support/>
+  <Project/>
   <Overview>ARK: Survival Evolved - Docker&#xD;
 &#xD;
 Docker build for managing an ARK: Survival Evolved server.&#xD;
@@ -26,7 +28,11 @@ Docker stop is a clean stop</Overview>
   <TemplateURL/>
   <Icon>http://i.imgur.com/mYdLixs.png</Icon>
   <ExtraParams/>
-  <DateInstalled>1498956269</DateInstalled>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1605465064</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
   <Description>ARK: Survival Evolved - Docker&#xD;
 &#xD;
 Docker build for managing an ARK: Survival Evolved server.&#xD;
@@ -45,23 +51,23 @@ Docker stop is a clean stop</Description>
     <Mode>host</Mode>
     <Publish>
       <Port>
-        <HostPort>7777</HostPort>
-        <ContainerPort>7777</ContainerPort>
+        <HostPort>27015</HostPort>
+        <ContainerPort>27015</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
-        <HostPort>7777</HostPort>
-        <ContainerPort>7777</ContainerPort>
+        <HostPort>27015</HostPort>
+        <ContainerPort>27015</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
       <Port>
-        <HostPort>27015</HostPort>
-        <ContainerPort>27015</ContainerPort>
+        <HostPort>7778</HostPort>
+        <ContainerPort>7778</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
-        <HostPort>27015</HostPort>
-        <ContainerPort>27015</ContainerPort>
+        <HostPort>7778</HostPort>
+        <ContainerPort>7778</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
@@ -73,25 +79,35 @@ Docker stop is a clean stop</Description>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Dockers/Ark/server</HostDir>
+      <HostDir>/mnt/cache/Dockers/Ark-Ragnarok/server</HostDir>
       <ContainerDir>/ark</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Dockers/Ark/Steam</HostDir>
+      <HostDir>/mnt/cache/Dockers/Ark-Ragnarok/Steam</HostDir>
       <ContainerDir>/root/Steam</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>HordesFinest</Value>
+      <Value>HordesFinest - Ragnarok</Value>
       <Name>SESSIONNAME</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>TheIsland</Value>
+      <Value>Ragnarok</Value>
       <Name>SERVERMAP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>731604991,543394681,793605978,821530042,889745138,895711211</Value>
+      <Name>SERVERMODS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>32</Value>
+      <Name>NBPLAYERS</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -100,7 +116,7 @@ Docker stop is a clean stop</Description>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>TrumpRules2017</Value>
+      <Value>wow2019</Value>
       <Name>ADMINPASSWORD</Name>
       <Mode/>
     </Variable>
@@ -125,31 +141,46 @@ Docker stop is a clean stop</Description>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>32</Value>
-      <Name>NBPLAYERS</Name>
+      <Value>7778</Value>
+      <Name>SERVERPORT</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value/>
-      <Name>SERVERMODS</Name>
+      <Value>27015</Value>
+      <Name>QUERYPORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>32330</Value>
+      <Name>RCONPORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>master</Value>
+      <Name>BRANCH</Name>
       <Mode/>
     </Variable>
   </Environment>
-  <Config Name="Ark Path" Target="/ark" Default="/mnt/user/Dockers/Ark" Mode="rw" Description="Ark volume local server path." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Dockers/Ark/server</Config>
-  <Config Name="Steam Path" Target="/root/Steam" Default="" Mode="rw" Description="Steam volume local server path." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Dockers/Ark/Steam</Config>
-  <Config Name="Session Name" Target="SESSIONNAME" Default="Ark Docker" Mode="" Description="Name of your ark server (default : Ark Docker)" Type="Variable" Display="always" Required="true" Mask="false">HordesFinest</Config>
-  <Config Name="Ark Server Map" Target="SERVERMAP" Default="TheIsland" Mode="" Description="Map of your ark server (default : TheIsland)" Type="Variable" Display="always" Required="true" Mask="false">TheIsland</Config>
-  <Config Name="Ark Game Mods" Target="SERVERMODS" Default="" Mode="" Description="Ark Server Game comma delimited mod list (default : null)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Labels/>
+  <Config Name="Ark Path" Target="/ark" Default="/mnt/user/Dockers/Ark" Mode="rw" Description="Ark volume local server path." Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/Dockers/Ark-Ragnarok/server</Config>
+  <Config Name="Steam Path" Target="/root/Steam" Default="" Mode="rw" Description="Steam volume local server path." Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/Dockers/Ark-Ragnarok/Steam</Config>
+  <Config Name="Session Name" Target="SESSIONNAME" Default="Ark Docker" Mode="" Description="Name of your ark server (default : Ark Docker)" Type="Variable" Display="always" Required="true" Mask="false">HordesFinest - Ragnarok</Config>
+  <Config Name="Ark Server Map" Target="SERVERMAP" Default="TheIsland" Mode="" Description="Map of your ark server (default : TheIsland)" Type="Variable" Display="always" Required="true" Mask="false">Ragnarok</Config>
+  <Config Name="Ark Game Mods" Target="SERVERMODS" Default="" Mode="" Description="Ark Server Game comma delimited mod list (default : null)" Type="Variable" Display="always" Required="false" Mask="false">731604991,543394681,793605978,821530042,889745138,895711211</Config>
   <Config Name="Number of Players" Target="NBPLAYERS" Default="70" Mode="" Description="Number of players allowed to connect to the server (default : 70)" Type="Variable" Display="always" Required="false" Mask="false">32</Config>
-  <Config Name="Steam Port (TCP)" Target="7777" Default="7777" Mode="tcp" Description="Steam Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
-  <Config Name="Steam Port (UDP)" Target="7777" Default="7777" Mode="udp" Description="Steam Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
-  <Config Name="Ark Server Port (TCP)" Target="27015" Default="27015" Mode="tcp" Description="Ark Server Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
-  <Config Name="Ark Server Port (UDP)" Target="27015" Default="27015" Mode="tcp" Description="Ark Server Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
-  <Config Name="Remote Console Port (TCP)" Target="32330" Default="32331" Mode="tcp" Description="Remote Console Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">32330</Config>
-  <Config Name="Server Password" Target="SERVERPASSWORD" Default="" Mode="" Description="Password of your ark server (default : none)" Type="Variable" Display="always" Required="true" Mask="true">wow2014</Config>
-  <Config Name="Ark Admin Password" Target="ADMINPASSWORD" Default="adminpassword" Mode="" Description="Admin password of your ark server (default : adminpassword)" Type="Variable" Display="always" Required="true" Mask="true">TrumpRules2017</Config>
-  <Config Name="Backup On Start" Target="BACKUPONSTART" Default="1" Mode="" Description="Backup the server when the container is started. 0: no backup (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
-  <Config Name="Update on Start" Target="UPDATEONSTART" Default="1" Mode="" Description="Update the server when the container is started. 0: no update (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
-  <Config Name="Backup on Stop" Target="BACKUPONSTOP" Default="0" Mode="" Description="Backup the server when the container is stopped. 0: no backup (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
-  <Config Name="Warn on Stop" Target="WARNONSTOP" Default="0" Mode="" Description="Warn the players before the container is stopped. 0: no warning (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+  <Config Name="Expose Query Port (TCP)" Target="27015" Default="7777" Mode="tcp" Description="Expose Steam Query Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
+  <Config Name="Expose Query Port (UDP)" Target="27015" Default="7777" Mode="udp" Description="Expose Steam Query Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">27015</Config>
+  <Config Name="Expose Ark Server Port (TCP)" Target="7778" Default="27015" Mode="tcp" Description="Expose Ark Server Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">7778</Config>
+  <Config Name="Expose Ark Server Port (UDP)" Target="7778" Default="27015" Mode="tcp" Description="Expose Ark Server Port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7778</Config>
+  <Config Name="Expose Remote Console Port (TCP)" Target="32330" Default="32331" Mode="tcp" Description="Expose Remote Console Port (TCP)" Type="Port" Display="always" Required="true" Mask="false">32330</Config>
+  <Config Name="Server Password startup parameter." Target="SERVERPASSWORD" Default="" Mode="" Description="Password of your ark server (default : none)" Type="Variable" Display="always" Required="true" Mask="true">wow2014</Config>
+  <Config Name="Ark Admin Password startup parameter" Target="ADMINPASSWORD" Default="adminpassword" Mode="" Description="Admin password of your ark server (default : adminpassword)" Type="Variable" Display="always" Required="true" Mask="true">wow2019</Config>
+  <Config Name="Backup On Start startup parameter" Target="BACKUPONSTART" Default="1" Mode="" Description="Backup the server when the container is started. 0: no backup (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+  <Config Name="Update on Start startup parameter" Target="UPDATEONSTART" Default="1" Mode="" Description="Update the server when the container is started. 0: no update (default : 1)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+  <Config Name="Backup on Stop startup parameter" Target="BACKUPONSTOP" Default="0" Mode="" Description="Backup the server when the container is stopped. 0: no backup (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+  <Config Name="Warn on Stop startup parameter" Target="WARNONSTOP" Default="0" Mode="" Description="Warn the players before the container is stopped. 0: no warning (default : 0)" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+  <Config Name="Ark Server Port startup parameter" Target="SERVERPORT" Default="7777" Mode="" Description="Ark server port parameter.  Should match Ark Server Port above." Type="Variable" Display="always" Required="true" Mask="false">7778</Config>
+  <Config Name="Query Port startup parameter" Target="QUERYPORT" Default="27015" Mode="" Description="Steam Query port parameter.  Should match Steam Query Port above." Type="Variable" Display="always" Required="true" Mask="false">27015</Config>
+  <Config Name="Remote Console Port parameter" Target="RCONPORT" Default="32330" Mode="" Description="Remote console port parameter.  Should match Remote Console Port above." Type="Variable" Display="always" Required="true" Mask="false">32330</Config>
+  <Config Name="arkmanager Branch" Target="BRANCH" Default="master" Mode="" Description="arkmanager branch (default : master)" Type="Variable" Display="always" Required="true" Mask="false">master</Config>
 </Container>

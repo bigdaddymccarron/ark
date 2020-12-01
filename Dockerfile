@@ -5,6 +5,8 @@ FROM ubuntu:20.04
 MAINTAINER bigdaddymccarron
 
 # Var for first config
+# Arkmanager Branch
+ENV BRANCH=master
 # Set Terminal
 ENV TERM=xterm
 # Time Zone

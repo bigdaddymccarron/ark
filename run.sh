@@ -11,6 +11,7 @@ echo "# Mods.......: $SERVERMODS"
 echo "# Query Port.: $QUERYPORT"
 echo "# Server Port: $SERVERPORT"
 echo "# RCON Port..: $RCONPORT"
+echo "# BRANCH.....: $BRANCH"
 echo "###########################################################################"
 [ -p /tmp/FIFO ] && rm /tmp/FIFO
 mkfifo /tmp/FIFO

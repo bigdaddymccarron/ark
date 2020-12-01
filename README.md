@@ -7,6 +7,9 @@ This image uses [Ark Server Tools](https://github.com/arkmanager/ark-server-tool
 *If you use an old volume, get the new arkmanager.cfg in the template directory.*  
 __Don't forget to use `docker pull bigdaddymccarron/ark` to get the latest version of the image__
 
+## v2.6
+- Added arkmanager Branch settings to docker config and added BRANCH environment variable
+
 ## v2.5
 - Fixed updatemods in arkshortcut.sh
 
