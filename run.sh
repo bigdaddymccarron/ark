@@ -49,7 +49,12 @@ cp /home/steam/crontab /ark/template/crontab
 [ ! -f /ark/crontab ] && cp /ark/template/crontab /ark/crontab
 
 # See if arkmanager tools need to be upgraded
+echo "Checking for arkmanager tools upgrade..."
 yes |arkmanager upgrade-tools
+
+# Build new steam environment sh for crontab to use
+echo "Updating steam environment for cron..."
+printenv | sed 's/^\(.*\)$/export \1/g' |grep -v "_=" |grep -v "LESS" |grep -v "HOME" |grep -v "COLORS" > /home/steam/steamenv.sh
 
 if [ ! -d /ark/server  ] || [ ! -f /ark/server/version.txt ];then 
 	echo "No game files found. Installing..."

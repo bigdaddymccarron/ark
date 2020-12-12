@@ -7,5 +7,5 @@ else
   git add .
   git commit -m "$COMMENT"
   git remote add origin https://github.com/bigdaddymccarron/ark.git
-  git push -f origin master
+  git push -u origin master
 fi
