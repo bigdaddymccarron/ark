@@ -81,7 +81,7 @@ RUN chmod 755 /home/steam/run.sh
 RUN chmod 755 /home/steam/user.sh
 RUN chmod 755 /usr/local/bin/arkshortcut.sh
 RUN mkdir  /ark
-RUN mkdir  /root/Steam
+RUN mkdir  /home/Steam
 
 WORKDIR /home/steam/
 # We use the git method, because api github has a limit ;)
@@ -126,7 +126,7 @@ EXPOSE ${QUERYPORT}/udp ${SERVERPORT}/udp 7777/udp
 EXPOSE ${RCONPORT}/tcp
 
 VOLUME  /ark 
-VOLUME  /root/Steam 
+VOLUME  /home/Steam 
 
 # Change the working directory to /ark
 WORKDIR /ark
